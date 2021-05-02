@@ -5,11 +5,6 @@ part 'app_state.g.dart';
 class AppState = _AppState with _$AppState;
 
 abstract class _AppState with Store {
-  static final kSlytherin = "Slytherin";
-  static final kGryffindor = "Gryffindor";
-  static final kWhatTheDuck = "What the duck?";
-  static final kCobraChicken = "Cobra Chicken";
-
   @observable
   bool initialized = false;
 
@@ -53,3 +48,15 @@ abstract class _AppState with Store {
     favorites.remove(url);
   }
 }
+
+final kSlytherin = "Slytherin";
+final kGryffindor = "Gryffindor";
+final kWhatTheDuck = "What the duck?";
+final kCobraChicken = "Cobra Chicken";
+
+final optionToImageMap = {
+  kSlytherin: 'slytherin.jpg',
+  kGryffindor: 'gryffindor.jpg',
+  kWhatTheDuck: 'duck.jpg',
+  kCobraChicken: 'cobrachicken.jpg'
+};

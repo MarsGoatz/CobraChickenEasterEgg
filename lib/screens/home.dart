@@ -12,9 +12,6 @@ class _HomePageState extends State<HomePage> {
   int _currentIndex = 0;
   @override
   Widget build(BuildContext context) {
-    final _appState = Provider.of<AppState>(context);
-    print('the options is' + _appState.option);
-
     return Scaffold(
       floatingActionButton: _currentIndex == 0
           ? FloatingActionButton(
@@ -57,9 +54,13 @@ class HomeTab extends StatefulWidget {
 class _HomeTabState extends State<HomeTab> {
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Text('Home'),
-    );
+    final _appState = Provider.of<AppState>(context);
+    return Observer(
+        builder: (_) => Image.asset(
+              optionToImageMap[_appState.option],
+              height: MediaQuery.of(context).size.height,
+              fit: BoxFit.fill,
+            ));
   }
 }
 
@@ -72,7 +73,6 @@ class _SettingsTabState extends State<SettingsTab> {
   @override
   Widget build(BuildContext context) {
     final _appState = Provider.of<AppState>(context);
-    print(_appState.option);
     return Column(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
