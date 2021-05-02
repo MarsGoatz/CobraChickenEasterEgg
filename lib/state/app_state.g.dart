@@ -39,6 +39,23 @@ mixin _$AppState on _AppState, Store {
     });
   }
 
+  final _$cobraChickenRevealTapsAtom =
+      Atom(name: '_AppState.cobraChickenRevealTaps');
+
+  @override
+  int get cobraChickenRevealTaps {
+    _$cobraChickenRevealTapsAtom.reportRead();
+    return super.cobraChickenRevealTaps;
+  }
+
+  @override
+  set cobraChickenRevealTaps(int value) {
+    _$cobraChickenRevealTapsAtom
+        .reportWrite(value, super.cobraChickenRevealTaps, () {
+      super.cobraChickenRevealTaps = value;
+    });
+  }
+
   final _$optionsAtom = Atom(name: '_AppState.options');
 
   @override
@@ -51,21 +68,6 @@ mixin _$AppState on _AppState, Store {
   set options(ObservableList<String> value) {
     _$optionsAtom.reportWrite(value, super.options, () {
       super.options = value;
-    });
-  }
-
-  final _$favoritesAtom = Atom(name: '_AppState.favorites');
-
-  @override
-  ObservableList<String> get favorites {
-    _$favoritesAtom.reportRead();
-    return super.favorites;
-  }
-
-  @override
-  set favorites(ObservableList<String> value) {
-    _$favoritesAtom.reportWrite(value, super.favorites, () {
-      super.favorites = value;
     });
   }
 
@@ -94,6 +96,17 @@ mixin _$AppState on _AppState, Store {
   }
 
   @override
+  void incrementCobraChickenRevealTaps() {
+    final _$actionInfo = _$_AppStateActionController.startAction(
+        name: '_AppState.incrementCobraChickenRevealTaps');
+    try {
+      return super.incrementCobraChickenRevealTaps();
+    } finally {
+      _$_AppStateActionController.endAction(_$actionInfo);
+    }
+  }
+
+  @override
   void addCobraChicken() {
     final _$actionInfo = _$_AppStateActionController.startAction(
         name: '_AppState.addCobraChicken');
@@ -105,45 +118,12 @@ mixin _$AppState on _AppState, Store {
   }
 
   @override
-  void addFavorite(String url) {
-    final _$actionInfo =
-        _$_AppStateActionController.startAction(name: '_AppState.addFavorite');
-    try {
-      return super.addFavorite(url);
-    } finally {
-      _$_AppStateActionController.endAction(_$actionInfo);
-    }
-  }
-
-  @override
-  void clearFavorites() {
-    final _$actionInfo = _$_AppStateActionController.startAction(
-        name: '_AppState.clearFavorites');
-    try {
-      return super.clearFavorites();
-    } finally {
-      _$_AppStateActionController.endAction(_$actionInfo);
-    }
-  }
-
-  @override
-  void removeFavorite(String url) {
-    final _$actionInfo = _$_AppStateActionController.startAction(
-        name: '_AppState.removeFavorite');
-    try {
-      return super.removeFavorite(url);
-    } finally {
-      _$_AppStateActionController.endAction(_$actionInfo);
-    }
-  }
-
-  @override
   String toString() {
     return '''
 initialized: ${initialized},
 option: ${option},
-options: ${options},
-favorites: ${favorites}
+cobraChickenRevealTaps: ${cobraChickenRevealTaps},
+options: ${options}
     ''';
   }
 }

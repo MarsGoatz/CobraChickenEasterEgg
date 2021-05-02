@@ -13,12 +13,6 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: _currentIndex == 0
-          ? FloatingActionButton(
-              child: Icon(Icons.add),
-              onPressed: () {},
-            )
-          : null,
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: Colors.grey[900],
         onTap: (itemIndex) {
@@ -99,7 +93,26 @@ class _SettingsTabState extends State<SettingsTab> {
                 .toList(),
           ),
         ),
-        Text('Build Number: 1.0.0+1'),
+        Observer(
+          builder: (_) => Column(
+            children: [
+              if (_appState.cobraChickenRevealTaps < 10 &&
+                  _appState.cobraChickenRevealTaps > 5)
+                Text(_appState.cobraChickenRevealTaps.toString()),
+              GestureDetector(
+                onTap: () {
+                  if (_appState.cobraChickenRevealTaps <= 10) {
+                    _appState.incrementCobraChickenRevealTaps();
+                  }
+                },
+                child: Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: Text('Build Number: 1.0.0+1'),
+                ),
+              ),
+            ],
+          ),
+        ),
         SizedBox(
           height: 100,
         )

@@ -12,11 +12,11 @@ abstract class _AppState with Store {
   String option;
 
   @observable
-  ObservableList<String> options =
-      ObservableList.of([kSlytherin, kGryffindor, kWhatTheDuck]);
+  int cobraChickenRevealTaps = 0;
 
   @observable
-  ObservableList<String> favorites = ObservableList();
+  ObservableList<String> options =
+      ObservableList.of([kSlytherin, kGryffindor, kWhatTheDuck]);
 
   @action
   void setOption(String newOption) {
@@ -29,23 +29,14 @@ abstract class _AppState with Store {
   }
 
   @action
+  void incrementCobraChickenRevealTaps() {
+    if (cobraChickenRevealTaps <= 10) cobraChickenRevealTaps++;
+    if (cobraChickenRevealTaps == 10) addCobraChicken();
+  }
+
+  @action
   void addCobraChicken() {
     options.add(kCobraChicken);
-  }
-
-  @action
-  void addFavorite(String url) {
-    favorites.add(url);
-  }
-
-  @action
-  void clearFavorites() {
-    favorites.clear();
-  }
-
-  @action
-  void removeFavorite(String url) {
-    favorites.remove(url);
   }
 }
 
