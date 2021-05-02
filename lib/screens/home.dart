@@ -50,10 +50,12 @@ class _HomeTabState extends State<HomeTab> {
   Widget build(BuildContext context) {
     final _appState = Provider.of<AppState>(context);
     return Observer(
-        builder: (_) => Image.asset(
-              optionToImageMap[_appState.option],
-              height: MediaQuery.of(context).size.height,
-              fit: BoxFit.fill,
+        builder: (_) => Center(
+              child: Image.asset(
+                optionToImageMap[_appState.option],
+                height: MediaQuery.of(context).size.height,
+                fit: BoxFit.fill,
+              ),
             ));
   }
 }
