@@ -72,11 +72,11 @@ mixin _$AppState on _AppState, Store {
   final _$_AppStateActionController = ActionController(name: '_AppState');
 
   @override
-  void setOption(String option) {
+  void setOption(String newOption) {
     final _$actionInfo =
         _$_AppStateActionController.startAction(name: '_AppState.setOption');
     try {
-      return super.setOption(option);
+      return super.setOption(newOption);
     } finally {
       _$_AppStateActionController.endAction(_$actionInfo);
     }

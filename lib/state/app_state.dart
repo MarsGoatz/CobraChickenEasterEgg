@@ -24,8 +24,8 @@ abstract class _AppState with Store {
   ObservableList<String> favorites = ObservableList();
 
   @action
-  void setOption(String option) {
-    option = option;
+  void setOption(String newOption) {
+    option = newOption;
   }
 
   @action

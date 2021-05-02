@@ -28,24 +28,26 @@ class _OptionsPageState extends State<OptionsPage> {
               height: 50,
             ),
           ]..addAll(
-              _appState.options.map(
-                (e) => TextButton(
-                    onPressed: () {
-                      _appState.setOption(e);
-                      _appState.setInitialized();
-                    },
-                    child: Column(
-                      children: [
-                        Text(
-                          e,
-                          style: TextStyle(fontSize: 30),
-                        ),
-                        SizedBox(
-                          height: 20,
-                        )
-                      ],
-                    )),
-              ),
+              _appState.options
+                  .map(
+                    (e) => TextButton(
+                        onPressed: () {
+                          _appState.setOption(e);
+                          _appState.setInitialized();
+                        },
+                        child: Column(
+                          children: [
+                            Text(
+                              e,
+                              style: TextStyle(fontSize: 30),
+                            ),
+                            SizedBox(
+                              height: 20,
+                            )
+                          ],
+                        )),
+                  )
+                  .toList(),
             ),
         ),
       ),
