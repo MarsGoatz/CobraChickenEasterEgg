@@ -15,6 +15,6 @@ class _StartupState extends State<Startup> {
   Widget build(BuildContext context) {
     final _appState = Provider.of<AppState>(context);
     return Observer(
-        builder: (_) => _appState.initialized ? Home() : OptionsPage());
+        builder: (_) => _appState.initialized ? HomePage() : OptionsPage());
   }
 }
