@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:provider/provider.dart';
 import 'package:react_van/state/app_state.dart';
+import 'package:gesture_x_detector/gesture_x_detector.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -23,7 +24,11 @@ class _HomePageState extends State<HomePage> {
         currentIndex: _currentIndex,
         items: [
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
+            icon: XGestureDetector(
+                onLongPress: (tap) =>
+                    _showThankYouReactVanAlertiDialog(context),
+                longPressTimeConsider: 3500,
+                child: Icon(Icons.home)),
             label: 'Home',
           ),
           BottomNavigationBarItem(
@@ -37,6 +42,29 @@ class _HomePageState extends State<HomePage> {
       ),
       body: _currentIndex == 0 ? HomeTab() : SettingsTab(),
     );
+  }
+
+  Future _showThankYouReactVanAlertiDialog(BuildContext context) {
+    return showDialog(
+        context: context,
+        builder: (context) => AlertDialog(
+              title: Text(
+                'THANK YOU REACT VAN',
+                style: TextStyle(fontSize: 30),
+              ),
+              content: Text(
+                'Really appreciate the support!',
+                style: TextStyle(fontSize: 30),
+              ),
+              actions: [
+                TextButton(
+                  child: Text("OK"),
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  },
+                )
+              ],
+            ));
   }
 }
 
