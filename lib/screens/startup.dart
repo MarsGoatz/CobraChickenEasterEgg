@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
-import 'package:react_van/screens/home.dart';
+import 'package:react_van/screens/home/home.dart';
 import 'package:react_van/screens/options_page.dart';
 import 'package:react_van/state/app_state.dart';
 import 'package:provider/provider.dart';
