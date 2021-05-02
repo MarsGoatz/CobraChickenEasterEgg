@@ -38,6 +38,13 @@ abstract class _AppState with Store {
   void addCobraChicken() {
     options.add(kCobraChicken);
   }
+
+  @action
+  void reset() {
+    options = ObservableList.of([kSlytherin, kGryffindor, kWhatTheDuck]);
+    cobraChickenRevealTaps = 0;
+    initialized = false;
+  }
 }
 
 final kSlytherin = "Slytherin";

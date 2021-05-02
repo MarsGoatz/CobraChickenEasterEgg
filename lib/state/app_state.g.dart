@@ -118,6 +118,17 @@ mixin _$AppState on _AppState, Store {
   }
 
   @override
+  void reset() {
+    final _$actionInfo =
+        _$_AppStateActionController.startAction(name: '_AppState.reset');
+    try {
+      return super.reset();
+    } finally {
+      _$_AppStateActionController.endAction(_$actionInfo);
+    }
+  }
+
+  @override
   String toString() {
     return '''
 initialized: ${initialized},

@@ -112,6 +112,16 @@ class _SettingsTabState extends State<SettingsTab> {
                   child: Text('Build Number: 1.0.0+1'),
                 ),
               ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: TextButton(
+                  onPressed: () => _appState.reset(),
+                  child: Text(
+                    'RESET',
+                    style: TextStyle(color: Colors.red),
+                  ),
+                ),
+              )
             ],
           ),
         ),
