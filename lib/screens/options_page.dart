@@ -13,7 +13,7 @@ class _OptionsPageState extends State<OptionsPage> {
     final _appState = Provider.of<AppState>(context);
     return Scaffold(
       appBar: AppBar(
-        title: Text('Flutter Van ft. React Van'),
+        title: Text('Cobra Chicken Easter Egg'),
       ),
       body: Center(
         child: Column(
