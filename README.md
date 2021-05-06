@@ -22,4 +22,4 @@ Welcome to Flutter Vancouver alert dialog is shown on tapping Home tab for 3.5 s
 
 # AppState
 
-The global app state is maintained using MobX. You can find the app state file in lib/app_state.dart.
+The global app state is maintained using MobX. You can find the app state file [here](lib/state/app_state.dart).
