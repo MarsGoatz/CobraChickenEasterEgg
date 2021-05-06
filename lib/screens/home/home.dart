@@ -49,11 +49,11 @@ class _HomePageState extends State<HomePage> {
       context: context,
       builder: (context) => AlertDialog(
         title: Text(
-          'THANK YOU REACT VAN',
+          'FLUTTER VANCOUVER',
           style: TextStyle(fontSize: 30),
         ),
         content: Text(
-          'Really appreciate the support!',
+          'Really glad to see you here!',
           style: TextStyle(fontSize: 30),
         ),
         actions: [
